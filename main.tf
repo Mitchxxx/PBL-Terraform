@@ -12,7 +12,7 @@ resource "aws_vpc" "main" {
   tags = merge(
     var.tags,
     {
-        Name = "ACS-VPC"
+        Name = format("%s-VPC", var.name)
     }
   )
 
