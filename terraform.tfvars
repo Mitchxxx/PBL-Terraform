@@ -10,8 +10,10 @@ preferred_number_of_public_subnets = 2
 
 preferred_number_of_private_subnets = 4
 
+environment = "dev"
+
 tags = {
-    Environment = "dev"
     Owner-Email = "megboko@gmail.com"
     Managed-By = "Terraform"
+    Billing-Account = "748527796092"
 }

@@ -31,3 +31,13 @@ variable "tags" {
   type = map(string)
   default = {}
 }
+
+variable "name" {
+    type = string
+  default = "ACS"
+}
+
+variable "environment" {
+    type = string
+    description = "Environment"
+}

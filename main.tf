@@ -8,6 +8,15 @@ resource "aws_vpc" "main" {
   cidr_block           = var.vpc_cidr
   enable_dns_support   = var.enable_dns_support
   enable_dns_hostnames = var.enable_dns_hostnames
+
+  tags = merge(
+    var.tags,
+    {
+        Name = "ACS-VPC"
+    }
+  )
+
+  
 }
 
 # Get list of availability zones
@@ -23,6 +32,12 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
   availability_zone       = data.aws_availability_zones.available.names[count.index]
 
+ tags = merge(
+    var.tags,
+    {
+        Name = format("%s-PublicSubnet-%s", var.name , count.index)
+    }
+  )
 }
 
 # Create private subnets
@@ -33,4 +48,11 @@ resource "aws_subnet" "private" {
   map_public_ip_on_launch = true
   availability_zone       = data.aws_availability_zones.available.names[count.index % length(data.aws_availability_zones.available.names)]
 
+tags = merge(
+    var.tags,
+    {
+        Name = format("%s-PrivateSubnet-%s", var.name , count.index)
+    }
+  )
 }
+
