@@ -1,7 +1,7 @@
 # The entire section create a certiface, public zone, and validate the certificate using DNS method
 
 # Create the certificate using a wildcard for all the domains created in oyindamola.gq
-resource "aws_acm_certificate" "oyindamola" {
+resource "aws_acm_certificate" "awsnettutorials" {
   domain_name       = "*.awsnettutorials.com"
   validation_method = "DNS"
 }
@@ -51,7 +51,7 @@ resource "aws_route53_record" "tooling" {
 
 # create records for wordpress
 resource "aws_route53_record" "wordpress" {
-  zone_id = data.aws_route53_zone.oyindamola.zone_id
+  zone_id = data.aws_route53_zone.awsnettutorials.zone_id
   name    = "wordpress.awsnettutorials.com"
   type    = "A"
 
