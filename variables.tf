@@ -15,29 +15,54 @@ variable "enable_dns_hostnames" {
 }
 
 variable "preferred_number_of_public_subnets" {
-    type = number
-    description = "Number of public subnets"
-  default = 2
+  type        = number
+  description = "Number of public subnets"
+  default     = 2
 }
 
 variable "preferred_number_of_private_subnets" {
-    type = number
-    description = "Number of private subnets"
-  default = 4
+  type        = number
+  description = "Number of private subnets"
+  default     = 4
 }
 
 variable "tags" {
   description = "A mapping of tags to assign to all resources"
-  type = map(string)
-  default = {}
+  type        = map(string)
+  default     = {}
 }
 
 variable "name" {
-    type = string
+  type    = string
   default = "ACS"
 }
 
 variable "environment" {
-    type = string
-    description = "Environment"
+  type        = string
+  description = "Environment"
+}
+
+variable "ami" {
+  type        = string
+  description = "Instance AMI ID for Lauch Templates"
+}
+
+variable "keypair" {
+  type        = string
+  description = "Key pir for the Instances"
+}
+
+variable "account_no" {
+  type        = number
+  description = "The AWS account number"
+}
+
+variable "master-username" {
+  type        = string
+  description = "RDS Username"
+}
+
+variable "master-password" {
+  type        = string
+  description = "RDS password"
 }

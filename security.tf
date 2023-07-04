@@ -35,10 +35,10 @@ resource "aws_security_group" "ext-alb-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
- tags = merge(
+  tags = merge(
     var.tags,
     {
-      Name = "ext-alb-sg"
+      Name = format("%s-ext-alb-sg", var.name)
     },
   )
 
@@ -47,7 +47,7 @@ resource "aws_security_group" "ext-alb-sg" {
 # security group for bastion, to allow access into the bastion host from you IP
 resource "aws_security_group" "bastion_sg" {
   name        = "bastion_sg"
-  vpc_id = aws_vpc.main.id
+  vpc_id      = aws_vpc.main.id
   description = "Allow incoming HTTP connections."
 
   ingress {
@@ -65,10 +65,10 @@ resource "aws_security_group" "bastion_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-   tags = merge(
+  tags = merge(
     var.tags,
     {
-      Name = "Bastion-SG"
+      Name = format("%s-Bastion-sg", var.name)
     },
   )
 }
@@ -85,10 +85,10 @@ resource "aws_security_group" "nginx-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-   tags = merge(
+  tags = merge(
     var.tags,
     {
-      Name = "nginx-SG"
+      Name = format("%s-Nginx-sg", var.name)
     },
   )
 }
@@ -126,7 +126,7 @@ resource "aws_security_group" "int-alb-sg" {
   tags = merge(
     var.tags,
     {
-      Name = "int-alb-sg"
+      Name = format("%s-int-alb-sg", var.name)
     },
   )
 
@@ -156,7 +156,7 @@ resource "aws_security_group" "webserver-sg" {
   tags = merge(
     var.tags,
     {
-      Name = "webserver-sg"
+      Name = format("%s-webserver-sg", var.name)
     },
   )
 
@@ -192,10 +192,10 @@ resource "aws_security_group" "datalayer-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
- tags = merge(
+  tags = merge(
     var.tags,
     {
-      Name = "datalayer-sg"
+      Name = format("%s-datalayer-sg", var.name)
     },
   )
 }

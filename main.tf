@@ -12,11 +12,11 @@ resource "aws_vpc" "main" {
   tags = merge(
     var.tags,
     {
-        Name = format("%s-VPC", var.name)
+      Name = format("%s-VPC", var.name)
     }
   )
 
-  
+
 }
 
 # Get list of availability zones
@@ -32,10 +32,10 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
   availability_zone       = data.aws_availability_zones.available.names[count.index]
 
- tags = merge(
+  tags = merge(
     var.tags,
     {
-        Name = format("%s-PublicSubnet-%s", var.name , count.index)
+      Name = format("%s-PublicSubnet-%s", var.name, count.index)
     }
   )
 }
@@ -48,10 +48,10 @@ resource "aws_subnet" "private" {
   map_public_ip_on_launch = true
   availability_zone       = data.aws_availability_zones.available.names[count.index % length(data.aws_availability_zones.available.names)]
 
-tags = merge(
+  tags = merge(
     var.tags,
     {
-        Name = format("%s-PrivateSubnet-%s", var.name , count.index)
+      Name = format("%s-PrivateSubnet-%s", var.name, count.index)
     }
   )
 }
