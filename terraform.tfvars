@@ -12,7 +12,7 @@ preferred_number_of_private_subnets = 4
 
 environment = "dev"
 
-ami = "ami-0f0f1c02e5e4d9d9f"
+ami-web = "ami-0f0f1c02e5e4d9d9f"
 
 account_no = "748527796092"
 
