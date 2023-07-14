@@ -18,9 +18,9 @@ account_no = "748527796092"
 
 keypair = "terraform-key"
 
-master-username = "mitchdb"
+db-username = "mitchdb"
 
-master-password = "devopsdbl"
+db-password = "devopsdbl"
 
 tags = {
   Owner-Email     = "megboko@gmail.com"

@@ -1,29 +1,27 @@
 variable "region" {
-  default = "eu-west-1"
+  
 }
 
 variable "vpc_cidr" {
-  default = "172.16.0.0/16"
+  
 }
 
 variable "enable_dns_support" {
-  default = "true"
+  type = bool
 }
 
 variable "enable_dns_hostnames" {
-  default = "true"
+  type = bool
 }
 
 variable "preferred_number_of_public_subnets" {
   type        = number
   description = "Number of public subnets"
-  default     = 2
 }
 
 variable "preferred_number_of_private_subnets" {
   type        = number
   description = "Number of private subnets"
-  default     = 4
 }
 
 variable "private_subnets" {
@@ -50,9 +48,10 @@ variable "name" {
 variable "environment" {
   type        = string
   description = "Environment"
+  default = true
 }
 
-variable "public_cidr_block" {
-  type        = string
-  default = "0.0.0.0/0"
-}
+# variable "public_cidr_block" {
+#   type        = string
+#   default = "0.0.0.0/0"
+# }

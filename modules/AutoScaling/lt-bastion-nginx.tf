@@ -1,6 +1,6 @@
 # Bastion Launch template
 resource "aws_launch_template" "bastion-launch-template" {
-  image_id               = var.ami
+  image_id               = var.ami-web
   instance_type          = "t2.micro"
   vpc_security_group_ids = var.bastion-sg
 
@@ -34,7 +34,7 @@ resource "aws_launch_template" "bastion-launch-template" {
 
 # Nginx Launch template
 resource "aws_launch_template" "nginx-launch-template" {
-  image_id               = var.ami
+  image_id               = var.ami-web
   instance_type          = "t2.micro"
   vpc_security_group_ids = var.nginx-sg
 

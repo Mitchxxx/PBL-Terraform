@@ -17,29 +17,28 @@ variable "enable_dns_hostnames" {
 variable "preferred_number_of_public_subnets" {
   type        = number
   description = "Number of public subnets"
-  default     = 2
 }
 
 variable "preferred_number_of_private_subnets" {
   type        = number
   description = "Number of private subnets"
-  default     = 4
-}
-
-variable "tags" {
-  description = "A mapping of tags to assign to all resources"
-  type        = map(string)
-  default     = {}
 }
 
 variable "name" {
   type    = string
   default = "ACS"
+
+}
+
+variable "tags" {
+  description = "A mapping of tags to assign to all resources."
+  type        = map(string)
+  default     = {}
 }
 
 variable "environment" {
   type        = string
-  description = "Environment"
+  description = "Enviroment"
 }
 
 variable "ami" {
@@ -57,12 +56,12 @@ variable "account_no" {
   description = "The AWS account number"
 }
 
-variable "master-username" {
+variable "db-username" {
   type        = string
   description = "RDS Username"
 }
 
-variable "master-password" {
+variable "db-password" {
   type        = string
   description = "RDS password"
 }
