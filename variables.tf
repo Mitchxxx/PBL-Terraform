@@ -56,12 +56,12 @@ variable "account_no" {
   description = "The AWS account number"
 }
 
-variable "db-username" {
+variable "master-username" {
   type        = string
   description = "RDS Username"
 }
 
-variable "db-password" {
+variable "master-password" {
   type        = string
   description = "RDS password"
 }

@@ -32,7 +32,7 @@ resource "aws_route_table" "public-rtb" {
 # Create a public route
 resource "aws_route" "public-rtb-route" {
   route_table_id         = aws_route_table.public-rtb.id
-  destination_cidr_block = var.public_cidr_block
+  destination_cidr_block = "0.0.0.0/0"
   gateway_id             = aws_internet_gateway.ig.id
 
 }

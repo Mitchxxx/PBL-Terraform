@@ -60,7 +60,7 @@ resource "aws_lb" "ialb" {
   name     = "ialb"
   internal = true
   security_groups = [
-    var.var.private-sg
+    var.private-sg
   ]
 
   subnets = [
