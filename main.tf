@@ -79,9 +79,9 @@ module "Security" {
 # Module for Autoscaling Groups, this will AutoScaling group instances
 module "AutoScaling" {
   source            = "./modules/AutoScaling"
-  ami-web           = var.ami
-  ami-bastion       = var.ami
-  ami-nginx         = var.ami
+  ami-web           = var.ami-web
+  ami-bastion       = var.ami-bastion
+  ami-nginx         = var.ami-nginx
   desired_capacity  = 2
   min_size          = 1
   max_size          = 2
