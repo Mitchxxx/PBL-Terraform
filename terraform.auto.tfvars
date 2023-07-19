@@ -12,7 +12,13 @@ preferred_number_of_private_subnets = 4
 
 environment = "dev"
 
-ami = "ami-0f0f1c02e5e4d9d9f"
+ami-bastion = "ami-0fede084a0b3d899d"
+
+ami-nginx = "ami-0de6ce505865a70bd"
+
+ami-sonar = "ami-0e1e270df6ed65f14"
+
+ami-web = "ami-05bb143cfc14e6782"
 
 account_no = "748527796092"
 
