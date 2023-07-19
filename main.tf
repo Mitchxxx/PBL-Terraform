@@ -78,7 +78,7 @@ module "Security" {
 
 # Module for Autoscaling Groups, this will AutoScaling group instances
 module "AutoScaling" {
-  source            = "./modules/Autoscaling"
+  source            = "./modules/AutoScaling"
   ami-web           = var.ami
   ami-bastion       = var.ami
   ami-nginx         = var.ami
@@ -121,7 +121,7 @@ module "RDS" {
 
 # The Module creates instances for jenkins, sonarqube abd jfrog
 module "Compute" {
-  source          = "./modules/compute"
+  source          = "./modules/Compute"
   ami-jenkins     = var.ami
   ami-sonar       = var.ami
   ami-jfrog       = var.ami
