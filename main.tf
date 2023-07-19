@@ -43,7 +43,7 @@ resource "aws_dynamodb_table" "terraform_locks" {
 
 # Module for Virtual Private Cloud, this will create a Virtual Private Cloud
 module "VPC" {
-  source                              = "../modules/VPC"
+  source                              = "./modules/VPC"
   region                              = var.region
   vpc_cidr                            = var.vpc_cidr
   enable_dns_support                  = var.enable_dns_support
@@ -56,7 +56,7 @@ module "VPC" {
 
 # Module for Application Load Balancer, this will create an External Load balancer and Internal Balancer
 module "ALB" {
-  source             = "../modules/ALB"
+  source             = "./modules/ALB"
   name               = "ACS-Ext"
   vpc_id             = module.VPC.vpc_id
   public-sg          = module.Security.ALB-sg
